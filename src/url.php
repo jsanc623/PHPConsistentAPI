@@ -18,10 +18,12 @@ class Url {
     }
 
     public function decode() {
-        return urldecode($this->value);
+        $this->value = urldecode($this->value);
+        return $this;
     }
 
     public function encode() {
-        return urlencode($this->value);
+        $this->value = urlencode($this->value);
+        return $this;
     }
 }
