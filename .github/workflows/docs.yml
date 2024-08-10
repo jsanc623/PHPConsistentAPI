@@ -13,18 +13,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0  # Adjust the Ruby version as needed
-
-      - name: Install Jekyll
-        run: gem install jekyll bundler
-
       - name: Build Jekyll site
-        run: |
-          bundle install
-          bundle exec jekyll build
+        uses: helaili/build-jekyll-for-github-pages@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
