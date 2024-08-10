@@ -1,28 +1,79 @@
-# PHPConsistentAPI
-Providing a consistent API for PHP
+# Consistent PHP Library
 
-<!--
-[![Latest Stable Version](https://poser.pugx.org/jsanc623/phpbenchtime/version.svg)](https://packagist.org/packages/jsanc623/phpbenchtime)
-[![Total Downloads](https://poser.pugx.org/jsanc623/phpbenchtime/downloads.svg)](https://packagist.org/packages/jsanc623/phpbenchtime)
-[![Monthly Downloads](https://poser.pugx.org/jsanc623/phpbenchtime/d/monthly.png)](https://packagist.org/packages/jsanc623/phpbenchtime)
-[![License](https://poser.pugx.org/jsanc623/phpbenchtime/license.svg)](https://packagist.org/packages/jsanc623/phpbenchtime)
-[![Build Status](https://travis-ci.org/jsanc623/PHPBenchTime.svg)](https://travis-ci.org/jsanc623/PHPBenchTime)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/76e521f6-4935-4b06-b545-aae76d149421/small.png)](https://insight.sensiolabs.com/projects/76e521f6-4935-4b06-b545-aae76d149421)
--->
+## Overview
 
-On Packagist
-============
+The Consistent PHP Library is a collection of utility classes that provide a consistent interface for various PHP standard library functions. The library aims to enhance code readability and maintainability by using a fluent interface and standardized method names.
 
-Methods
-=======
+## Features
 
-Properties
-==========
+- **Fluent Interface**: Chain method calls for cleaner and more readable code.
+- **Consistent Method Naming**: Intuitive method names that mirror PHP standard library functions.
+- **Type Safety**: Built with PHP 8 type declarations for better code quality and error handling.
 
-Usage
-=====
+## Supported Classes
 
-HISTORY
-=======
+The following classes are included in the library, each corresponding to a specific set of PHP standard library functions:
 
-* v0.0.1 \[2019-09-16\] Inception
+- **ArrayUtils**: Provides utility methods for array manipulation.
+- **Config**: Handles configuration loading and management.
+- **Console**: Provides utility functions for console operations.
+- **Cookie**: Manages cookies in a consistent manner.
+- **Csv**: Handles CSV file operations.
+- **Date**: Provides date and time utility functions.
+- **Env**: Manages environment variables.
+- **File**: Provides utility functions for file operations.
+- **Hash**: Handles hashing operations.
+- **Http**: Provides HTTP-related utility functions.
+- **Image**: Manages image processing tasks.
+- **Json**: Handles JSON encoding and decoding.
+- **Locale**: Provides localization and internationalization utilities.
+- **Mail**: Provides functionality for sending emails.
+- **Math**: Contains mathematical utility functions.
+- **Number**: Provides utility functions for number manipulation.
+- **Path**: Handles path-related operations.
+- **Regex**: Provides regular expression utilities.
+- **Secure**: Handles security-related functions.
+- **Session**: Manages session operations.
+- **Str**: Provides string manipulation functions.
+- **Type**: Contains type-checking utilities.
+- **Url**: Provides URL manipulation and validation functions.
+- **Xml**: Handles XML parsing and manipulation.
+
+## Installation
+
+You can install the library using Composer. Add the following line to your `composer.json` file:
+
+```json
+{
+    "require": {
+        "nsa-yoda/consistent-php": "^1.0"
+    }
+}
+```
+
+Then run:
+
+```bash
+composer install
+```
+
+
+## Usage
+
+Here’s a quick example of how to use the library:
+
+```php
+use ConsistentPHP\ArrayUtils;
+
+$array = new ArrayUtils([1, 2, 3]);
+$result = $array->push(4)->unique()->values()->toArray();
+print_r($result); // Outputs: [1, 2, 3, 4]
+```
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
